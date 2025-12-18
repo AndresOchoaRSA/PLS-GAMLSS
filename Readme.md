@@ -27,9 +27,15 @@ X <- BostonNew[,c("crim","indus","nox",
 ## PLS-GAMLSS with gamma distribution.
 
 MODPLS.gammlss <- pls_gamlss(X, y, a=3,
-                             familyd=GA)
+                             familyd=GA)  ### a = # components ; familyd: several distributions of gamlss package.
 
 MODPLS.gammlss$AIC
 MODPLS.gammlss$BIC
+
+## Comparison observed values ​​vs fitted values.
+
+par(mfrow=c(1,2))
+hist(MODPLS.gammlss$yPred2)  ## fitted values
+hist(y)
 
 ```
