@@ -5,3 +5,31 @@ This repository contains the necessary elements to reproduce the results of the 
 pls_gamlss() is a function in R that allows fitting a PLS-GAMLSS model using several distributions.
 
 Repository: https://github.com/AndresOchoaRSA/PLS-GAMLSS
+
+
+## Minimal Example
+
+```R
+# load the function
+source("R/pls_gamlss.R")
+
+install.packages("MASS")
+install.packages("gamlss")
+
+library(MASS)
+library(gamlss)
+data("Boston")
+
+y <- BostonNew$medv
+X <- BostonNew[,c("crim","indus","nox",
+                    "rm","dis","rad")]
+
+## PLS-GAMLSS with gamma distribution.
+
+MODPLS.gammlss <- pls_gamlss(X, y, a=3,
+                             familyd=GA)
+
+MODPLS.gammlss$AIC
+MODPLS.gammlss$BIC
+
+```
