@@ -2,7 +2,7 @@
 ### se compara PLS-GAMLSS-SEP vs PLS clásico (Usando AIC y BIC)
 ### 20 Sept 2026
 ### propuesta beta= 0.4 y 0.8.
-### por ahora estoy probando beta=0.8 (parametro kurtosis de la SEP.)
+
 
 
 library(gamlss) ## Regresion flexible semi parametrica
